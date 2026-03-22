@@ -12,6 +12,7 @@ function App() {
       <section id="center">
         <ul>
           <li> init project</li>
+          <li>init CI/CD</li>
         </ul>
       </section>
     </>
