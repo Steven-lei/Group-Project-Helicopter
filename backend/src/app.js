@@ -1,14 +1,35 @@
+import dotenv from "dotenv";
 import express from "express";
-var app = express();
+import cors from "cors";
+import { initFireBase } from "../configs/firebase.js";
+import router from "./routes/routes.js";
+import chalk from "chalk";
+
+dotenv.config();
 const PORT = process.env.PORT ?? 3000;
 
-app.get("/", (req, res) => {
-  res.send(
-    "backend is running...If you see this without manual deploying, the CI/CD is working",
-  );
-});
+initFireBase();
+var app = express();
+
+const corsOption = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+};
+app.use(cors(corsOption));
+app.use(express.json());
+app.use("/", router);
 
 app.listen(PORT, function () {
-  console.log(`app listening on port ${PORT}!`);
-  console.log(`test the backend locally using: http://localhost:${PORT}`);
+  console.log(chalk.green(`backend is listening on port ${PORT}!`));
+  console.log(
+    chalk.green.bold("    ➜    ") +
+      chalk.white("Local:    ") +
+      chalk.blue(`http://localhost:${PORT}`),
+  );
 });
