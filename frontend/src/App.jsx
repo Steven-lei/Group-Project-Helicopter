@@ -21,6 +21,10 @@ function App() {
               Link
             </a>
           </li>
+          <li>
+            If you see this message without manually deployment, CI/CD is
+            working
+          </li>
         </ul>
       </section>
     </>
