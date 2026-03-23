@@ -20,6 +20,15 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
+  multipleStatements: true,
 });
-
+pool
+  .getConnection()
+  .then((conn) => {
+    console.log("🚀 Database pool connected successfully");
+    conn.release();
+  })
+  .catch((err) => {
+    console.error("❌ Database connection failed:", err.message);
+  });
 export { pool };

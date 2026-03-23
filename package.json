@@ -10,7 +10,8 @@
     "dev": "concurrently -c \"cyan.bold,magenta.bold\" \"npm:dev:frontend\" \"npm:dev:backend\"",
     "dev:frontend": "npm run dev --workspace frontend",
     "dev:backend": "npm run dev --workspace backend",
-    "db-test": "npm run db-test --workspace backend"
+    "initdb": "npm run initdb --workspace backend",
+    "s3-test": "npm run s3-test --workspace backend"
   },
   "dependencies": {
     "concurrently": "^9.2.1"
