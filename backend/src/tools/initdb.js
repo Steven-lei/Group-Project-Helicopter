@@ -21,5 +21,6 @@ import { pool } from "../db/db.js";
     console.error(chalk.red("errmsg:", err.message));
   } finally {
     if (connection) connection.release();
+    pool.end();
   }
 })();
