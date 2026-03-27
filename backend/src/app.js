@@ -34,3 +34,20 @@ app.listen(PORT, function () {
       chalk.blue(`http://localhost:${PORT}`),
   );
 });
+
+//fly.io cannot shutdown the mysql connection pool
+//use the following code to quit close safely
+const gracefulShutdown = async () => {
+  console.log("Starting graceful shutdown...");
+  try {
+    await pool.end();
+    console.log("Database pool closed.");
+    process.exit(0);
+  } catch (err) {
+    console.error("Error during shutdown", err);
+    process.exit(1);
+  }
+};
+
+process.on("SIGTERM", gracefulShutdown);
+process.on("SIGINT", gracefulShutdown);
