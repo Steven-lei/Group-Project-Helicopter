@@ -7,3 +7,7 @@ librosa==0.10.2.post1
 soundfile==0.13.1
 scipy==1.15.1
 imageio-ffmpeg==0.6.0
+pyyaml==6.0.2
+torch>=2.1.0
+transformers>=4.20.0
+einops>=0.8.0
