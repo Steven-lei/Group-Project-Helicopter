@@ -11,6 +11,7 @@ permissions:
 jobs:
   deploy-frontend:
     runs-on: ubuntu-latest
+    environment: github-pages
     defaults:
       run:
         working-directory: ./frontend
@@ -29,7 +30,8 @@ jobs:
 
       - name: Build project
         run: npm run build
-
+        env:
+          VITE_BACKEND_BASE_URL: ${{ secrets.VITE_BACKEND_BASE_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
