@@ -1,9 +1,10 @@
 {
   "info": {
-    "_postman_id": "fe850a95-7d81-46df-a066-5ad1d6784891",
+    "_postman_id": "47f3274e-934d-4d05-b4dc-9f1cbb9d7c12",
     "name": "moodpal",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "50540301"
+    "_exporter_id": "50540301",
+    "_collection_link": "https://go.postman.co/collection/50540301-47f3274e-934d-4d05-b4dc-9f1cbb9d7c12?source=collection_link"
   },
   "item": [
     {
@@ -82,7 +83,8 @@
                   "pm.globals.set(\"email\",response.data.email)"
                 ],
                 "type": "text/javascript",
-                "packages": {}
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -99,22 +101,14 @@
               }
             },
             "url": {
-              "raw": "{{BASE_URL}}/api/users/:userid/pets",
+              "raw": "{{BASE_URL}}/api/users/",
               "host": [
                 "{{BASE_URL}}"
               ],
               "path": [
                 "api",
                 "users",
-                ":userid",
-                "pets"
-              ],
-              "variable": [
-                {
-                  "key": "userid",
-                  "value": "",
-                  "type": "string"
-                }
+                ""
               ]
             }
           },
@@ -225,10 +219,8 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "{{userid}}",
-                  "type": "string"
+                  "value": "{{userid}}"
                 }
               ]
             }
@@ -294,10 +286,8 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "{{userid}}",
-                  "type": "string"
+                  "value": "{{userid}}"
                 }
               ]
             }
@@ -365,10 +355,8 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "{{userid}}",
-                  "type": "string"
+                  "value": "{{userid}}"
                 }
               ]
             }
@@ -437,15 +425,12 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "{{userid}}",
-                  "type": "string"
+                  "value": "{{userid}}"
                 },
                 {
                   "key": "petid",
-                  "value": "{{petid}}",
-                  "type": "string"
+                  "value": "{{petid}}"
                 }
               ]
             }
@@ -503,15 +488,12 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "{{userid}}",
-                  "type": "string"
+                  "value": "{{userid}}"
                 },
                 {
                   "key": "petid",
-                  "value": "{{petid}}",
-                  "type": "string"
+                  "value": "{{petid}}"
                 }
               ]
             }
@@ -572,10 +554,8 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "{{userid}}",
-                  "type": "string"
+                  "value": "{{userid}}"
                 }
               ]
             }
@@ -600,10 +580,8 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "69d08c9c0c22cacef7e0ae32",
-                  "type": "string"
+                  "value": "69d08c9c0c22cacef7e0ae32"
                 }
               ]
             }
@@ -648,10 +626,8 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "userid",
-                  "value": "{{userid}}",
-                  "type": "string"
+                  "value": "{{userid}}"
                 }
               ]
             }
@@ -777,10 +753,8 @@
               ],
               "variable": [
                 {
-                  "id": 0,
                   "key": "topicid",
-                  "value": "69d08c9c0c22cacef7e0ae3a",
-                  "type": "string"
+                  "value": "69d08c9c0c22cacef7e0ae3a"
                 }
               ]
             }
@@ -793,8 +767,7 @@
   "variable": [
     {
       "key": "BASE_URL",
-      "value": "localhost:5001",
-      "type": "string"
+      "value": "localhost:5001"
     }
   ]
 }
