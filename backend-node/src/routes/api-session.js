@@ -11,14 +11,10 @@ function createSessionId() {
 }
 const router = Router();
 router.get("/", async (req, res) => {
-  try {
-    const sessions = await Session.find({}).sort({
-      createdAt: -1,
-    });
-    return ok(res, sessions || []);
-  } catch (error) {
-    return fail(res, error.message || "Failed to get sessions", 500);
-  }
+  const sessions = await Session.find({}).sort({
+    createdAt: -1,
+  });
+  return ok(res, sessions || []);
 });
 router.post("/", async (req, res) => {
   const { userId } = req.body;
