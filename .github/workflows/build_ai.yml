@@ -49,6 +49,7 @@ jobs:
             !ai-service-python/.venv/
             !ai-service-python/__pycache__/
             !ai-service-python/**/*.pyc
+            !ai-service-python/.git/
 
       # 🚫 Opting Out of Oryx Build
       # If you prefer to disable the Oryx build process during deployment, follow these steps:
