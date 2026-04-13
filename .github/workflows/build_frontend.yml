@@ -26,8 +26,10 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
-
+        run: npm install
+      - name: Force fix Rollup Linux binary
+        run: npm install @rollup/rollup-linux-x64-gnu
+        working-directory: ./frontend-react
       - name: Build project
         run: npm run build
         env:
