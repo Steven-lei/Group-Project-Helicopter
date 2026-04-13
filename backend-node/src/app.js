@@ -9,7 +9,7 @@ import {
   notFoundHandler,
 } from "./middlewares/error.middleware.js";
 
-export function createApp({ clientOrigin, uploadDir }) {
+export function createApp({ uploadDir }) {
   const app = express();
 
   if (!fs.existsSync(uploadDir)) {
