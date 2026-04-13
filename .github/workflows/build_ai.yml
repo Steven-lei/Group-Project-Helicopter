@@ -42,7 +42,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: ai-service-python/
+          path: |
+            ai-service-python/
+            !ai-service-python/antenv/
+            !ai-service-python/venv/
+            !ai-service-python/.venv/
+            !ai-service-python/__pycache__/
+            !ai-service-python/**/*.pyc
 
       # 🚫 Opting Out of Oryx Build
       # If you prefer to disable the Oryx build process during deployment, follow these steps:
